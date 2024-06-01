@@ -1,20 +1,23 @@
 import dash
-import dash_uploader as du
 from dash.dependencies import Input, Output, State
+import dash_bootstrap_components as dbc
+import dash_uploader as du
+
+import requests
 import numpy as np
 import os
-from PIL import Image
 import base64
 import io
-import requests
-from dash import dcc, html
-import dash_bootstrap_components as dbc
 import matplotlib.pyplot as plt
 import cv2
+import time
+
+from dash import dcc, html
+from PIL import Image
 
 
 # Set up the request URL and authorization token
-REQUEST_URL = "http://jucajagu.ddns.net:3000/predict/"
+REQUEST_URL = "http://127.0.0.1:3000/predict/"
 AUTH_TOKEN = "d391a9b3ef4e483880986aae70e164f2"
 
 # Configure Dash app with a Bootstrap theme
@@ -30,7 +33,7 @@ colors = ('b', 'g', 'r')
 def parse_contents(contents):
     return html.Img(src=contents, style={"width": "50%", "margin": "auto", "display": "block"})
 
-#### Mostrar histogramas
+# Create histograms
 def crear_histograma(img_array):
     histograma = []
     for i, _ in enumerate(colors):
@@ -128,8 +131,9 @@ def analyze_image(n_clicks, fileNames, upload_id):
         with open(file_path, "rb") as image_file:
             files = {"image": image_file}
             headers = {"Authorization": f"Bearer {AUTH_TOKEN}"}
+        
             response = requests.post(REQUEST_URL, files=files, headers=headers)
-
+                
             # Parse the response and display the predictions
             if response.status_code == 200:
                 predictions = response.json()
@@ -193,6 +197,7 @@ app.layout = dbc.Container(
         dcc.Store(id='stored-image', data=None),
 
         dbc.Row(dbc.Col(dbc.Button("Analyze", id="analyze-button", n_clicks=0, color="primary"), width=6, className="text-center offset-md-3")),
+        dbc.Row(dbc.Col(html.H5("En caso de Fallo 500 volver a intentar", className="text-center my-4"))),
         dbc.Row(dbc.Col(html.Div(id="output-image", className="mt-4"), width=6, className="offset-md-3")),
     ],
     fluid=True
@@ -200,4 +205,4 @@ app.layout = dbc.Container(
 
 # Run the application
 if __name__ == "__main__":
-    app.run_server(host="127.0.0.1", port=8053, debug=True)
+    app.run_server(host="0.0.0.0", port=8053, debug=True)
