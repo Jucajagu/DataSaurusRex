@@ -11,7 +11,7 @@ def addapt_numpy_array(numpy_array):
 register_adapter(np.ndarray, addapt_numpy_array)
 
 # Load the CSV file
-df = pd.read_csv('embedding_images.csv')
+df = pd.read_csv('../../exports/embedding_images.csv')
 
 # Database connection
 conn = psycopg2.connect(

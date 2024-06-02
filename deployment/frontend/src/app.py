@@ -17,7 +17,7 @@ from PIL import Image
 
 
 # Set up the request URL and authorization token
-REQUEST_URL = "http://127.0.0.1:3000/predict/"
+REQUEST_URL = "http://jucajagu.ddns.net:3000/predict/"
 AUTH_TOKEN = "d391a9b3ef4e483880986aae70e164f2"
 
 # Configure Dash app with a Bootstrap theme

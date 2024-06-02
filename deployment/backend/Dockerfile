@@ -1,6 +1,12 @@
 # Use an appropriate base image for your application
 FROM python:3.10.14
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -15,4 +21,4 @@ COPY src/ .
 EXPOSE 3000
 
 # Command to run your FastAPI application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "3000"]
+CMD ["python", "app.py"]

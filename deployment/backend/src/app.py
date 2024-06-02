@@ -5,7 +5,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import numpy as np
 import io
 
-from utils import read_image_as_numpy_array, file_to_base64, load_label_encoder
+from utils import transform_image, file_to_base64, load_label_encoder
 from model_manage import start_model
 
 from db_utils import find_nearest_neighbors
@@ -35,7 +35,7 @@ async def predict(
 ):
     image_data = await image.read()
     image_file = io.BytesIO(image_data)
-    img_array = read_image_as_numpy_array(image_file)
+    img_array = transform_image(image_file)
 
     # Make a prediction
     prediction = model.predict(img_array)
@@ -55,7 +55,7 @@ async def predict(
     base64_files = []
     for position, neighbor in enumerate(nearest_neighbors, 1):
         base64_files.append({
-            "base64": file_to_base64(f"bin/{neighbor['location']}"),
+            "base64": file_to_base64(neighbor['location']),
             "label": neighbor["label"],
             "position": position
         })
