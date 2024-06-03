@@ -157,11 +157,11 @@ Este enfoque basado en embeddings y similitud de coseno demuestra cómo los mode
 
 Amazon Relational Database Service (RDS) es un servicio en la nube administrado que facilita la configuración, la operación y la escalabilidad de bases de datos relacionales. (https://aws.amazon.com/rds/).  Para el desarrollo del proyecto la base de datos ("ANALITICA") cuenta con información de datos analíticos como embeddings, etiquetas (label) y ubicaciones (location).
 
-Embeddings: Los embeddings son representaciones vectoriales de datos que capturan relaciones y similitudes semánticas. Es este caso cada fotografia tiene su representación.
+**Embeddings:** Los embeddings son representaciones vectoriales de datos que capturan relaciones y similitudes semánticas. Es este caso cada fotografia tiene su representación.
 
-Etiquetas: Las etiquetas son metadatos que se asocian con datos para proporcionar información adicional. Para el proyecto tenemos etiquetas para identificar si la fotografía corresponde a un dibujo (drawings), escultura (sculptures), etc.
+**Etiquetas:** Las etiquetas son metadatos que se asocian con datos para proporcionar información adicional. Para el proyecto tenemos etiquetas para identificar si la fotografía corresponde a un dibujo (drawings), escultura (sculptures), etc.
 
-Ubicaciones: Las ubicaciones son datos que representan la ubicación del archivo fotográfico de acuerdo a la similitud encontrada por el modelo.   
+**Ubicaciones:** Las ubicaciones son datos que representan la ubicación del archivo fotográfico dentro del servidor en la carpeta /bin/* de acuerdo a la similitud encontrada por el modelo.   
 
 La siguiente es la estructura de la BD utilizada en la arquitectura del proyecto.
 
@@ -234,14 +234,16 @@ La api está orquestrada por el script [app.py](../deployment/backend/src/app.py
 El desarrollo de la interfaz con la que el usuario final interactua con la plataforma esta desarrollado utilizando la biblioteca DASH. 
 
 Dash proporciona una variedad de componentes integrados que se pueden utilizar para crear aplicaciones web. Estos componentes incluyen:  
-Gráficos: Dash incluye una variedad de componentes de gráficos que se pueden usar para visualizar datos.  
-Controles de entrada: Dash incluye una variedad de controles de entrada que se pueden utilizar para recopilar datos de los usuarios. En el caso del proyecto, permite cargar la imagen una vez ésta sea escogida por el usuario.  
-Diseños de página: Dash incluye una variedad de diseños de página que se pueden usar para organizar los componentes en la pantalla.  La interfaz del proyecto es sencilla permitiendo que el usuario interactue de forma eficiente recibiendo los resultados del analisis rapidamente.
+**Gráficos:** Dash incluye una variedad de componentes de gráficos que se pueden usar para visualizar datos.  
+**Controles de entrada:** Dash incluye una variedad de controles de entrada que se pueden utilizar para recopilar datos de los usuarios. En el caso del proyecto, permite cargar la imagen una vez ésta sea escogida por el usuario.  
+**Diseños de página:** Dash incluye una variedad de diseños de página que se pueden usar para organizar los componentes en la pantalla.  La interfaz del proyecto es sencilla permitiendo que el usuario interactue de forma eficiente recibiendo los resultados del analisis rapidamente.
 
+![Interfaz WEB](resources/Interfaz.jpg)
 
 
 
 # 8. Solución / Herramientas - DP
+
 ## Demo
 - http://jucajagu.ddns.net:8000
 - Poner el gif acá
