@@ -27,9 +27,9 @@ Un ejemplo de estas aplicaciones puede verse en el mundo del comic, donde las re
 El objetivo principal de este proyecto es desarrollar un modelo capaz de clasificar imágenes con obras artísticas. Este sistema utilizará técnicas avanzadas de aprendizaje automático, específicamente redes neuronales convolucionales, para identificar y categorizar diversos tipos de obras de arte, incluyendo pinturas, esculturas, iconografías, grabados y dibujos. La clasificación precisa y eficiente de estas imágenes no solo facilitará la organización a grandes bases de datos de arte, sino que también permitirá nuevas formas de análisis y estudio de las obras artísticas desde una perspectiva de la vision computacional. Complementariamente, a dicho objetivo, además de clasificar la imagen en su respectiva categoría artística se procederá a establecer y presentar las 5 imágenes más cercanas o similares (desde los rasgos que el modelo computacional capture).
 
 ## Justificación y uso para la clasificación automatizada de piezas artísticas, casos de uso
-La automatización de este proceso no solo aumentará la eficiencia y la precisión, sino que también permitirá manejar volúmenes mucho mayores de información, algo especialmente útil en la era digital. Además, la clasificación automatizada puede abrir nuevas vías para la investigación académica y el estudio del arte. Por ejemplo, puede facilitar el análisis comparativo entre diferentes periodos o estilos, así como la identificación de patrones y tendencias que podrían no ser evidentes mediante el análisis manual.
+La automatización de este proceso no solo aumentará la eficiencia del mismo, sino que también permitirá manejar volúmenes mucho mayores de información, algo especialmente útil en la era digital. Además, la clasificación automatizada puede abrir nuevas vías para la investigación académica y el estudio del arte. Por ejemplo, puede facilitar el análisis comparativo entre diferentes periodos o estilos, así como la identificación de patrones y tendencias que podrían no ser evidentes mediante el análisis manual.  
 
-# 3. Colección de Datos -SRC
+# 3. Colección de Datos -SRC  
 ## Descripción de dónde salieron los datos y qué contienen
 La información proviene de: [Kaggle](https://www.kaggle.com/datasets/thedownhill/art-images-drawings-painting-sculpture-engraving). Como indica su documentación, la base original cuenta con 12.800 imágenes provenientes de google images, yandex images y el "Virtual Russian Museum [VRM]"
 
@@ -44,13 +44,25 @@ Esta viene distribuida en dos carpetas con información separada "dataset" y "mu
 # 4. Análisis Exploratorio -SRC
 ## Highlights y procedimiento corto de EDA con hallazgos
 
-Como parte de la extracción inicial de las imágenes en el training_set, se identificaron 108 que no pudieron ser procesadas por errores en formato, y al revisar la conversión de estas en arrays se encontraron 1567 imágenes duplicadas. Finalmente, tras la limpieza de datos, se se procesaron 6621 imágenes correctamente como parte del training set y con la siguiente distribución de clases:
+Como parte de la extracción inicial de las imágenes en el training_set, se identificaron 108 que no pudieron ser procesadas por errores en formato, y al revisar la conversión de estas en arrays se encontraron 1567 imágenes duplicadas. Finalmente, tras la limpieza de datos, se procesaron 6621 imágenes correctamente como parte del training set y con la siguiente distribucion de clases:
 
-![Distribución de clases](resources/desc_class.png){width=50%}
+![Distribución de clases](resources/desc_clases.png){width=50%}
 
-Para el validation_set, 16 no pudieron ser procesadas por errores en formato, y se encontraron 152 imágenes duplicadas, es decir se contó con 955 imágenes para el proceso de validación.
+Para el validation_set, 16 imágenes no pudieron ser procesadas por errores en formato, y se encontraron 152 duplicadas, es decir se contó con 955 imágenes para el proceso de validación.
 
-# 5. Modelo de Clasificación
+Las imágenes cargadas fueron transformadas a arrays con un shape (150, 150, 3) para que pudieran ser operadas por la RNC. Adicionalmente, se analizaron los histogramas correspondientes para la intensidad promedio de los canales RGB de las clases de imágenes. Estos pueden observarse a continuación:
+
+![Histograma para dibujos](resources/hist_drawings.png){width=50%}
+![Histograma para grabados](resources/hist_engravings.png){width=50%}
+![Histograma para iconografías](resources/hist_iconography.png){width=50%}
+![Histograma para pinturas](resources/hist_paintings.png){width=50%}
+![Histograma para esculturas](resources/hist_sculptures.png){width=50%}
+
+Algunos análisis que se pueden realizar de estos es la similitud entre los histogramas de dibujos y grabados que puede entenderse dado que estos se caracterizan por ser imágenes en escala de grises. Por otro lado, la mayor diferencia en la distribución de pixeles entre canales de color puede verse en las iconografías, esto se explica dada que en estas imágenes se pueden observar el uso de colores con un alto contraste entre sí en la creación y diseño de las mismas.
+
+También se puede notar los picos en las zonas claras de intensidad de la imagen, esto se identificó que es debido a las imágenes que originalmente venían con "bordes" en blanco a su alrededor, se asume que estas originalmente correspondían a imagenes tipo .png que fueron transformadas a .jpg asignándoles este color blanco a los pixeles que no se registraban. 
+
+# 5. Modelo de Clasificación -JC
 ## Explicación de Modelo Neuronal
 Congruente con el objetivo de desarrollar un modelo de clasificación de imágenes con obras artísticas dependiendo de su tipología, se manejo un modelo de red neuronal con una arquitectura similar a la de AlexNet [@Krizhevsky2012]. Para este proyecto en particular se utilizo una arquitectura con múltiples capas de neuronas convolucionales seguidas de capas densas funciones de activación ReLU para maximizar el desempeño de la captura de los pesos particulares de los modelos. Adicionalmente se utilizó un optimizador Adam congruente con el objetivo de minimizar el costo computacional de la convergencia del algoritmo. En la siguiente tabla se visualiza las especificidades de las capas usadas
 

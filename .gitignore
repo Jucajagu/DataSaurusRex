@@ -161,9 +161,7 @@ cython_debug/
 dataset_updated
 exports
 
-# Images folders
-drawings/
-engraving/
-iconography/
-painting/
-sculpture/
+# Images extensions
+*.jpg
+*.jpeg
+*.png
