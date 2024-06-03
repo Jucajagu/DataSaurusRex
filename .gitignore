@@ -162,5 +162,8 @@ dataset_updated
 exports
 
 # Images extensions
-*.jpg
-*.jpeg
+drawings/
+engraving/
+iconography/
+painting/
+sculpture/
