@@ -155,6 +155,19 @@ Este enfoque basado en embeddings y similitud de coseno demuestra cómo los mode
 # 6. Carga de Datos -DP
 ## Explicación de RDS Amazon y su uso
 
+Amazon Relational Database Service (RDS) es un servicio en la nube administrado que facilita la configuración, la operación y la escalabilidad de bases de datos relacionales. (https://aws.amazon.com/rds/).  Para el desarrollo del proyecto la base de datos cuenta con información de datos analíticos como embeddings, etiquetas (label) y ubicaciones (location).
+
+Embeddings: Los embeddings son representaciones vectoriales de datos que capturan relaciones y similitudes semánticas.  
+Etiquetas: Las etiquetas son metadatos que se asocian con datos para proporcionar información adicional.  
+Ubicaciones: Las ubicaciones son datos que representan la ubicación del archivo fotográfico .   
+
+La siguiente es la estructura de la BD utilizada en la arquitectura del proyecto.
+
+
+
+
+
+
 ## Carga de embeddings de imágenes
 Utilizando un [script](../deployment/db_load/) de python basado en psycopg2 se cargo el csv obtenido de extraer todos los embeddings de las imágenes de la base de datos, cómo se explica en la sección de [Embedding de Imagenes](#embedding-de-imágenes). 
 
