@@ -266,6 +266,23 @@ Cada una de las pruebas permitio identificar y corregir errores hasta lograr ten
 
 ## Explicación de uso
 
+A continuación se describe el paso a paso del uso de la solución:
+
+1. Ingresar a la url **- http://jucajagu.ddns.net:8000**
+
+![Interfaz WEB](resources/Interfaz.jpg)
+
+2. Sobre el cuadro enmarcado, haga click para subir una imagen, busque la imagen y presione open.  La imagen sera cargada en la interfaz y desplegará el mapa de frecuencias RGB de acuerdo a las capas identificadas en la fotografía.
+
+3. Presione el boton **"Analyze"**, esto permitirá que el archivo cargado sea analizado por medio del modelo entrenado y envie el resultado.  
+4. En este caso el resultado es la identificación de una escultura con el 99% de probabilidad, abajo muestra las 5 fotos que mas se acercan a este resultado.  
+   
+
+
+
+
+
+
 # 9. Discusión y Conclusiones
 El proyecto fue efectivo, logrando crear un sistema y un Producto Mínimo Viable (MVP) para la clasificación de imágenes tanto vía API como con interfaz gráfica. Este sistema, además de integrar distintas tecnologías después de un preprocesamiento de los datos, dar la categoría de las imágenes, permite identificar las cinco imágenes más similares dentro de la base de datos. Este avance puede ser extremadamente útil para automatizar tareas de categorización dentro de operaciones del mundo artístico. Además, se podría extender a otros ámbitos donde, con más datos y metadatos de las imágenes, se podría predecir la escuela de vanguardia o el estilo artístico, entre otros.
 
