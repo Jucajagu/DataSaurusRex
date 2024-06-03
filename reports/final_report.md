@@ -251,7 +251,7 @@ La siguiente es la URL que permite ingresar a la interfaz de usuario de la aplic
 
 El siguiente video muestra un demo de la solución:
 
-![Demo](resources/demo.gif)
+![Demo](resources/demo2.gif)
 
 ## Pruebas Unitarias
 Las pruebas unitarias son un tipo de prueba de software que se utiliza para verificar el comportamiento de unidades individuales de código, como funciones, clases o módulos. Estas pruebas se aíslan del resto del código, lo que permite probarlas de forma independiente y garantizar que funcionan correctamente.  
