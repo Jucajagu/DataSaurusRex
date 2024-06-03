@@ -25,8 +25,10 @@ Un ejemplo de estas aplicaciones puede verse en el mundo del comic, donde las re
 
 # 2. Contexto y Objetivo del Proyecto -SRC
 ## Objetivo de clasificar imágenes relacionadas a elementos artísticos
-## Justificación y uso para la clasificación automatizada de piezas artísticas, casos de uso
+El objetivo principal de este proyecto es desarrollar un modelo capaz de clasificar imágenes con obras artísticas. Este sistema utilizará técnicas avanzadas de aprendizaje automático, específicamente redes neuronales convolucionales, para identificar y categorizar diversos tipos de obras de arte, incluyendo pinturas, esculturas, iconografías, grabados y dibujos. La clasificación precisa y eficiente de estas imágenes no solo facilitará la organización a grandes bases de datos de arte, sino que también permitirá nuevas formas de análisis y estudio de las obras artísticas desde una perspectiva de la vision computacional.
 
+## Justificación y uso para la clasificación automatizada de piezas artísticas, casos de uso
+La automatización de este proceso no solo aumentará la eficiencia y la precisión, sino que también permitirá manejar volúmenes mucho mayores de información, algo especialmente útil en la era digital. Además, la clasificación automatizada puede abrir nuevas vías para la investigación académica y el estudio del arte. Por ejemplo, puede facilitar el análisis comparativo entre diferentes periodos o estilos, así como la identificación de patrones y tendencias que podrían no ser evidentes mediante el análisis manual.  
 # 3. Colección de Datos -SRC
 ## Descripción de dónde salieron los datos y qué contienen
 
@@ -48,7 +50,7 @@ Como parte de la extracción inicial de las imágenes en el training_set, se ide
 
 ![Distribución de clases](resources/desc_class.png){width=50%}
 
-Para el validation_set, 16 no pudieron ser procesadas por errores en formato, y se encontraron 152 imágenes duplicadas, en conclusión como set de validación se procesaron 955 imágenes correctamente.
+Para el validation_set, 16 no pudieron ser procesadas por errores en formato, y se encontraron 152 imágenes duplicadas, es decir se contó con 955 imágenes para el proceso de validación.
 
 
 # 5. Modelo de Clasificación -JC
