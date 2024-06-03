@@ -114,7 +114,9 @@ Para mayor detalle del entrenamiento véase [este](../notebooks/model_building_0
 ## Visualización 3D 
 En el proceso de análisis de interpretación del modelo, sobre el modelo entrenado se añadió una capa de 3 neuronas con una función de activación lineal antes de la capa de salida con el objetivo de extraer un embedding que permitiera ver visualmente y de manera tridimensional la capacidad de separación de las clases por parte del modelo.
 
-<iframe src="resources/3d_scatter_plot.html" width="800" height="400"></iframe>
+[Separabilidad Clases](resources/3d_scatter_plot.html)
+
+Para interactuar con el gráfico haz click [aquí](resources/3d_scatter_plot.html)
 
 Se refleja que existe una buena diferenciación entre lo que se define como esculturas, pinturas e iconografías. Sin embargo se refleja una superposición importante entre los grabados (engravings) con los dibujos, evidenciando que existe una posible dificultad en la separación entre estas dos etiquetas. 
 
