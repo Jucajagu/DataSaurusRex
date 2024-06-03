@@ -222,9 +222,20 @@ La api está orquestrada por el script [app.py](../deployment/backend/src/app.py
 ## Pruebas Unitarias
 ## Explicación de uso
 
-# 9. Discusión y Conclusiones - UN POCO TODOS  
-Los resultados encontrados en el análisis exploratorio nos permiten visualizar algunas de la diferencias que existen entre las distribuciones de intensidad por canal de colores para cada clase de imagen. Por ejemplo, se pudo visualizar las semejanzas en esta distribución entre las clases de dibujo y 
+# 9. Discusión y Conclusiones
+El proyecto fue efectivo, logrando crear un sistema y un Producto Mínimo Viable (MVP) para la clasificación de imágenes tanto vía API como con interfaz gráfica. Este sistema, además de integrar distintas tecnologías después de un preprocesamiento de los datos, dar la categoría de las imágenes, permite identificar las cinco imágenes más similares dentro de la base de datos. Este avance puede ser extremadamente útil para automatizar tareas de categorización dentro de operaciones del mundo artístico. Además, se podría extender a otros ámbitos donde, con más datos y metadatos de las imágenes, se podría predecir la escuela de vanguardia o el estilo artístico, entre otros.
 
-# 10. Limitaciones - UN POCO TODOS  
+Los resultados obtenidos en el análisis exploratorio nos permitieron visualizar algunas de las diferencias que existen entre las distribuciones de intensidad por canal de colores para cada clase de imagen. Basándonos en dicho análisis y utilizando una arquitectura convolucional, se logró entrenar un modelo de clasificación de categorías de imágenes que, de manera adecuada, permitió predecir su tipología. Al analizar este modelo en mayor detalle, se observaron ciertas características donde algunas tipologías presentaban mayor dificultad de separación que otras. A partir de este modelo entrenado y optimizado, se extrajeron embeddings para identificar similitudes entre imágenes.
+
+El sistema se desplegó utilizando un servidor local, con un backend construido con FastAPI y un frontend con Dash, todo encapsulado dentro de contenedores Docker. Para almacenar los embeddings se utilizó un RDS de AWS, con el objetivo de distribuir la carga computacional entre la predicción y la búsqueda de similitudes en el motor de la base de datos. El despliegue se realizó abriendo puertos hacia un dominio gestionado por DDNS.
+
+En resumen, este proyecto no solo ha demostrado la viabilidad de la clasificación y similitud de imágenes mediante técnicas avanzadas de machine learning, sino que también ha creado una base sólida para futuras mejoras y aplicaciones en el ámbito artístico y más allá.
+
+# 10. Limitaciones
+- Al las imágenes pertenecer en una gran parte a un banco de imágenes de arte ruso con un sesgo importante de estilo religioso, el modelo puede no tener el mejor desempeño para generalizar los resultados otros tipos de arte como moderno o abstracto.
+- El despliegue en un servidor local tiene dificultades al momento de la escalabilidad si se presentará un alto nivel de consultas al servidor.
+- La tecnología de Dash-FastAPI, si bien son robustas, para un nivel de carga mayor puede que requiera de frameworks más solidos cómo Django o Nest.
+- La ausencia de una IP estática y un certificado SSL para la comunicación puede llevar a problemas en la seguridad e integridad de los datos enviados si este sistema recibiera datos sensibles.
+- Por cuestiones de limitaciones temporales no se logró hacer una transformación de las imágenes para augmentar la capacidad de generalización del modelo, lo que conlleva a una limitación de entrenamiento del mismo.
 
 # 11. Referencias
