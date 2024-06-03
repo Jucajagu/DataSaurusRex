@@ -164,10 +164,11 @@ Etiquetas: Las etiquetas son metadatos que se asocian con datos para proporciona
 Ubicaciones: Las ubicaciones son datos que representan la ubicación del archivo fotográfico de acuerdo a la similitud encontrada por el modelo.   
 
 La siguiente es la estructura de la BD utilizada en la arquitectura del proyecto.
-La base de datos es POSTGRES la cual fue configurada directamente en la interfaz de AWS y garantizando su acceso publico (analitica.cakbsuyk0vne.us-east-1.rds.amazonaws.com)  
-
 
 ![Estructura Base de Datos](resources/BD.jpg)
+
+La base de datos es POSTGRES la cual fue configurada directamente en la interfaz de AWS y garantizando su acceso publico (analitica.cakbsuyk0vne.us-east-1.rds.amazonaws.com)
+
 
 ## Carga de embeddings de imágenes
 Utilizando un [script](../deployment/db_load/) de python basado en psycopg2 se cargo el csv obtenido de extraer todos los embeddings de las imágenes de la base de datos, cómo se explica en la sección de [Embedding de Imagenes](#embedding-de-imágenes). 
