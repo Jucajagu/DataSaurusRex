@@ -29,7 +29,7 @@ def transform_image(image, target_size=(150, 150)):
         else:
             raise ValueError("Unexpected image dimensions or channels")
         
-        return img_array.resize(1, 150, 150, 3)
+        return img_array.reshape(1, 150, 150, 3)
 
 def file_to_base64(file_path):
     with open(file_path, "rb") as file:
