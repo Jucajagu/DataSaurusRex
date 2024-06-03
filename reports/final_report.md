@@ -152,7 +152,7 @@ La implementación de este proceso permite al sistema no solo predecir la catego
 
 Este enfoque basado en embeddings y similitud de coseno demuestra cómo los modelos de redes neuronales pueden ser utilizados no solo para clasificación, sino también para tareas de búsqueda y recuperación de información en grandes conjuntos de datos visuales.
 
-# 6. Carga de Datos -DP
+# 6. Carga de Datos
 ## Explicación de RDS Amazon y su uso
 
 Amazon Relational Database Service (RDS) es un servicio en la nube administrado que facilita la configuración, la operación y la escalabilidad de bases de datos relacionales. (https://aws.amazon.com/rds/).  Para el desarrollo del proyecto la base de datos ("ANALITICA") cuenta con información de datos analíticos como embeddings, etiquetas (label) y ubicaciones (location).
@@ -229,7 +229,17 @@ El payload enviado al endpoint /predict/ consiste en una imagen que se envía co
 ### Auxiliares
 La api está orquestrada por el script [app.py](../deployment/backend/src/app.py) la cuál a su vez se contiene funciones auxiliares para las sentencias usando sqlalchemy a la base de datos RDS que contiene los embeddings para identificar las 5 imágenes más cercanas de la enviada al endpoint. A su vez utiliza otros scripts para el preprocesamiento de la imagen y activar el modelo desde el archivo ``.h5``.
 
-## Frontend usando Dash - DP
+## Frontend usando Dash
+
+El desarrollo de la interfaz con la que el usuario final interactua con la plataforma esta desarrollado utilizando la biblioteca DASH. 
+
+Dash proporciona una variedad de componentes integrados que se pueden utilizar para crear aplicaciones web. Estos componentes incluyen:  
+Gráficos: Dash incluye una variedad de componentes de gráficos que se pueden usar para visualizar datos.  
+Controles de entrada: Dash incluye una variedad de controles de entrada que se pueden utilizar para recopilar datos de los usuarios. En el caso del proyecto, permite cargar la imagen una vez ésta sea escogida por el usuario.  
+Diseños de página: Dash incluye una variedad de diseños de página que se pueden usar para organizar los componentes en la pantalla.  La interfaz del proyecto es sencilla permitiendo que el usuario interactue de forma eficiente recibiendo los resultados del analisis rapidamente.
+
+
+
 
 # 8. Solución / Herramientas - DP
 ## Demo
