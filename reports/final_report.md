@@ -249,14 +249,21 @@ La siguiente es la URL que permite ingresar a la interfaz de usuario de la aplic
 
 **- http://jucajagu.ddns.net:8000**  
 
-Tambien puede dar click al siguiente enlace para ver el demo de la solución:
+El siguiente video muestra un demo de la solución:
 
-![Demo](resources/demo.mp4)
-
-
-
+![Demo](resources/demo.gif)
 
 ## Pruebas Unitarias
+Las pruebas unitarias son un tipo de prueba de software que se utiliza para verificar el comportamiento de unidades individuales de código, como funciones, clases o módulos. Estas pruebas se aíslan del resto del código, lo que permite probarlas de forma independiente y garantizar que funcionan correctamente.  
+
+Durante el desarrollo del proyecto se realizaron diferentes pruebas con cada uno de los componentes de backend y frontend para garantizar la integridad de la solución. Algunas fueron:  
+- **Conectividad a la base de datos:**  una vez creada la BD se realizo prueba de conectividad por medio del gestor dbeaver.  
+- **Interfaz Dash:** apoyandonos en el aprendizaje obtenido se desarrollo y ajusto la interfaz que permitiera subir archivos dese una carpeta de un PC.  
+- **Integración:** teniendo el backend desarrollado, se hizo y se probo la conectividad con el frontend de tal forma que la imagen escogida se lograra analizar.  
+- **Publicación:** Por ultimo, al garantizar que los componentes de la aplicación estaban funcionando, se procedió a publicar la url de acceso en internet y realizar analisis desde diferentes computadores.  
+
+Cada una de las pruebas permitio identificar y corregir errores hasta lograr tener todo integrado en la aplicación.
+
 ## Explicación de uso
 
 # 9. Discusión y Conclusiones
