@@ -114,7 +114,7 @@ Para mayor detalle del entrenamiento véase [este](../notebooks/model_building_0
 ## Visualización 3D 
 En el proceso de análisis de interpretación del modelo, sobre el modelo entrenado se añadió una capa de 3 neuronas con una función de activación lineal antes de la capa de salida con el objetivo de extraer un embedding que permitiera ver visualmente y de manera tridimensional la capacidad de separación de las clases por parte del modelo.
 
-![Separabilidad Clases](resources/3d_scatter_plot.html)
+![Separabilidad Clases](resources/3d_scatter_plot.png)
 
 Para interactuar con el gráfico descarga el html [aquí](resources/3d_scatter_plot.html)
 
