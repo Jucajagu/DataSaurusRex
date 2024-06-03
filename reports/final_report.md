@@ -242,11 +242,19 @@ Dash proporciona una variedad de componentes integrados que se pueden utilizar p
 
 
 
-# 8. Solución / Herramientas - DP
+# 8. Solución / Herramientas
 
 ## Demo
-- http://jucajagu.ddns.net:8000
-- Poner el gif acá
+La siguiente es la URL que permite ingresar a la interfaz de usuario de la aplicación web:  
+
+**- http://jucajagu.ddns.net:8000**  
+
+Tambien puede dar click al siguiente enlace para ver el demo de la solución:
+
+![Demo](resources/demo.mp4)
+
+
+
 
 ## Pruebas Unitarias
 ## Explicación de uso
