@@ -270,12 +270,20 @@ A continuación se describe el paso a paso del uso de la solución:
 
 1. Ingresar a la url **- http://jucajagu.ddns.net:8000**
 
-![Interfaz WEB](resources/Interfaz.jpg)
+![demo](resources/escoger.jpg)
 
 2. Sobre el cuadro enmarcado, haga click para subir una imagen, busque la imagen y presione open.  La imagen sera cargada en la interfaz y desplegará el mapa de frecuencias RGB de acuerdo a las capas identificadas en la fotografía.
 
+![demo](resources/escultura.jpg)
+
+
 3. Presione el boton **"Analyze"**, esto permitirá que el archivo cargado sea analizado por medio del modelo entrenado y envie el resultado.  
-4. En este caso el resultado es la identificación de una escultura con el 99% de probabilidad, abajo muestra las 5 fotos que mas se acercan a este resultado.  
+
+![demo](resources/preccion.jpg)
+
+4. En este caso el resultado es la identificación de una **escultura con el 99% de probabilidad**, abajo muestra las 5 fotos que mas se acercan a este resultado.
+
+Para analizar una nueva fotografía se repite el proceso.
    
 
 
