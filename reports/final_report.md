@@ -15,7 +15,7 @@ Una imagen en un plano bidimensional se puede definir como una función de dos v
 
 Una de las variables que considera la función de una imagen es el color o longitud de onda ($\lambda$), esta es percibida por los seres humanos gracias los tres pigmentos de colores que se encuentran en la retina (Young et al., 1995). En imágenes digitales, su representacion se da de una manera similar en términos de las combinaciones de colores primarios -generalmente siendo rojo, verde y azul- donde cada canal representa la intensidad del respectivo color entre 0 y 255. En otras palabras, cada imagen en RGB está realmente compuestas por 3 imágenes.
 
-Por otro lado, la clasificación de imágenes es un proceso que busca que la maquina pueda "leer" una nueva información que recibe en forma de imagen y mediante un proceso de entrenamiento previo pueda clasificarla en una determinada clase, para el caso de aprendizaje supervisado, las clases de un set de entrenamiento son dadas inicialmente a la máquina [@Ponnusamy2017, @Raut2023].  
+Por otro lado, la clasificación de imágenes es un proceso que busca que la maquina pueda "leer" una nueva información que recibe en forma de imagen y mediante un proceso de entrenamiento previo pueda clasificarla en una determinada clase [@Ponnusamy2017], para el caso de aprendizaje supervisado, las clases de un set de entrenamiento son dadas inicialmente a la máquina [@Raut2023].  
 Este proceso de clasificación de imágenes ha sido abordado desde las redes neuronales convolucionales en los años 90 [@LeCun1989], encontrando altos indicadores del desempeño de estas [@Zeiler2014]. El funcionamiento fundamental de estas parte por un mapeo de imagen 2D $x_i$ por una serie de capas a un vector de probabilidad $\hat{y_i}$ para todas las posibles clases, siendo la capa final un clasificador de tipo "softmax" [@Zeiler2014].
 
 ## Antecedentes
@@ -33,7 +33,7 @@ La automatización de este proceso no solo aumentará la eficiencia del mismo, s
 # 3. Colección de Datos 
 ## Descripción de dónde salieron los datos y qué contienen
 
-La información proviene de: [Kaggle](https://www.kaggle.com/datasets/thedownhill/art-images-drawings-painting-sculpture-engraving). Como indica su documntación, la base original cuenta con 12.800 imágenes provenientes de google images, yandex images y el "Virtual Russian Museum [VRM]"
+La información proviene de: [Kaggle](https://www.kaggle.com/datasets/thedownhill/art-images-drawings-painting-sculpture-engraving). Como indica su documntación, la base original cuenta con 12.800 imágenes provenientes de google images, yandex images y el "Virtual Russian Museum [VRM]", esta tenía un tamaño de apróximadamente 600 mb.
 
 | Formato  | Cantidad |
 |----------|----------|
